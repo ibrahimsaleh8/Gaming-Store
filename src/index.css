@@ -1,0 +1,366 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: #1b1b1c;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #1b1b1c;
+  border-radius: 20px;
+  background: #f6dc04;
+}
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+body {
+  background-color: #030303;
+  color: white;
+  overflow-x: hidden;
+  font-family: "Onest", sans-serif;
+}
+
+@layer components {
+  .container {
+    @apply px-[0.5rem] sm:px-[2rem];
+  }
+  .main-navbar {
+    @apply lg:overflow-hidden backdrop-filter backdrop-blur-sm sticky z-50 text-white font-bold w-full  flex justify-between items-center left-0 top-0  bg-[#010101e0] border-b border-[#313131] sm:px-14 px-5 py-5  shadow-lg;
+  }
+  .li-small {
+    @apply text-white text-lg py-2 block duration-200 rounded-md w-full text-center;
+  }
+  .smallNav {
+    @apply lg:hidden fixed z-50 bg-[#000000f7] backdrop-filter backdrop-blur-3xl left-0 top-0 w-full rounded-md py-2 text-main-Background flex justify-center items-center;
+  }
+  .nav-li {
+    @apply tracking-wider flex items-center gap-2 px-3 py-2 rounded-sm  hover:text-yellow-text cursor-pointer duration-200;
+  }
+  /* Forms */
+  .form-container {
+    @apply rounded-lg my-5  relative   overflow-hidden lg:w-1/2 w-full  md:p-4 p-2 mx-auto flex md:flex-row flex-col-reverse justify-between items-center gap-6 border border-[#232323];
+  }
+  .another-register {
+    @apply flex gap-5 items-center justify-start flex-wrap;
+  }
+  .google-btn {
+    @apply flex cursor-pointer justify-center items-center gap-2 border w-full py-2 rounded-full border-second-low-white hover:bg-white hover:text-black duration-300;
+  }
+  .add-prod-btn {
+    @apply !w-full !bg-blue-color !text-white !border !border-blue-color hover:!bg-main-Background !duration-300;
+  }
+  .success-btn {
+    @apply !mt-2 !bg-success-color !text-white !border !border-second-black hover:!bg-main-Background !duration-300 hover:!border-success-color hover:!text-success-color;
+  }
+  .danger-btn {
+    @apply !bg-error !text-white !border !border-error hover:!bg-main-Background !duration-300 hover:!border-error hover:!text-error;
+  }
+  /* Landing */
+  .main-landing {
+    @apply flex-1 p-1 sm:p-4 rounded-lg flex flex-col gap-4 overflow-hidden;
+  }
+  .landing-btns {
+    @apply px-5  py-2 bg-yellow-text hover:bg-white hover:text-black duration-200  text-black font-bold text-lg rounded;
+  }
+  .icons-landing {
+    @apply flex flex-col lg:gap-6 gap-4 items-end text-black h-full flex-1 rounded-xl bg-yellow-text p-3 lg:p-7;
+  }
+  .icons-landing-icon {
+    @apply flex items-center font-bold overflow-hidden relative hover:bg-white hover:text-black border-2 duration-200 border-black justify-between gap-4 w-full bg-black text-white p-3 rounded-xl;
+  }
+  .search-input {
+    @apply lg:w-1/2 w-full mx-auto flex  items-center gap-2;
+  }
+
+  /* Landing Card */
+  .main-card {
+    @apply bg-second-black border  border-second-black hover:border-low-white duration-200 p-2 md:p-4 rounded-lg flex md:flex-col gap-3 shadow-sm shadow-second-black;
+  }
+  .card-img {
+    @apply h-44 object-contain rounded-lg mx-auto;
+  }
+  .card-price-and-check {
+    @apply flex justify-between md:items-center gap-y-3 md:flex-row flex-col;
+  }
+  .add-to-card {
+    @apply !bg-yellow-text  !text-black !font-bold !duration-200 hover:!bg-black hover:!text-yellow-text !border  !border-yellow-text;
+  }
+  .cards-container {
+    @apply grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-2.5 w-full;
+  }
+  /* Requirments */
+  .requirments {
+    @apply flex gap-x-28 flex-col md:flex-row gap-y-10  items-start max-w-full justify-between md:px-10 w-full bg-second-black p-5 rounded-lg shadow-md shadow-black;
+  }
+  .req-col {
+    @apply flex flex-col gap-4;
+  }
+  .req-info-head {
+    @apply text-low-white flex items-center gap-3 mb-1;
+  }
+  .req-info-body {
+    @apply break-words text-yellow-text text-lg;
+  }
+  /* Product Info */
+  .sideBar-pro-info {
+    @apply xl:w-96 w-full flex xl:flex-col flex-col sm:gap-4 py-3 sm:flex-row;
+  }
+
+  /* Cart Page */
+  .card-cart {
+    @apply bg-second-black relative hover:bg-black duration-300 flex gap-2 rounded-md border-r-2 border-yellow-text;
+  }
+  .amount-btn {
+    @apply !bg-yellow-text hover:!bg-main-Background !border !border-yellow-text hover:!text-white hover:!border-white !duration-200 !text-black !w-9 !h-9 !flex !justify-center  !items-center !text-lg !rounded-md;
+  }
+  .delet-btn-cart {
+    @apply bg-error w-fit h-fit px-2 py-1 rounded absolute right-1 top-1 cursor-pointer border border-error hover:text-error hover:bg-black duration-300;
+  }
+
+  /* Dashboard */
+  .dashboard-nav {
+    @apply w-full  font-bold sticky top-0 left-0 py-5 flex items-center justify-between gap-3 px-3 bg-black z-20 sm:px-10;
+  }
+  .dashboard-sidebar {
+    @apply md:w-52 w-72 h-screen p-4 flex flex-col items-center gap-10 bg-main-Background border-r border-second-black md:!sticky fixed left-0 top-0  -translate-x-[100%] duration-300  md:!translate-x-0 z-50;
+  }
+  .dashboard-sidebar-links {
+    @apply px-5 py-3 w-full hover:text-yellow-text duration-300 hover:bg-second-black rounded-lg flex items-center gap-2;
+  }
+  .overview-card {
+    @apply bg-second-black text-white lg:w-[32%] w-full  p-4 border h-24 text-xl border-[#5a5a5a] hover:text-yellow-text hover:bg-main-Background duration-300 shadow-md flex justify-between gap-3 rounded-lg;
+  }
+  .small-card-text {
+    @apply bg-second-low-white my-1  flex items-center gap-2 text-white px-5 py-2 w-fit rounded-lg mr-auto;
+  }
+  .user-order-card {
+    @apply bg-second-black p-4 rounded-lg relative;
+  }
+  .text-user-order-info {
+    @apply bg-black border hover:bg-white hover:text-black hover:border-black font-bold duration-200 border-[#505050] text-white py-2 px-5 w-full md:w-1/2 rounded-lg;
+  }
+
+  .social-card {
+    @apply p-2 border duration-200 hover:bg-black cursor-pointer border-[#313131] w-12 h-12 flex justify-center items-center rounded-md bg-second-black;
+  }
+}
+
+.overview-card {
+  box-shadow: 0px 4px 0px 0px #333;
+}
+a.active {
+  color: #f6dc04;
+}
+a.dashboard-sidebar-links.active {
+  background-color: #252525ad;
+  color: #f6dc04;
+}
+
+.icons-landing {
+  clip-path: polygon(
+    0% 2em,
+    2em 0,
+    100% 0,
+    100% calc(100% - 2em),
+    calc(100% - 2em) 100%,
+    0 100%
+  );
+}
+@media (max-width: 1024px) {
+  .icons-landing {
+    clip-path: polygon(
+      50% 0%,
+      100% 0%,
+      100% 60%,
+      100% 100%,
+      0% 100%,
+      0% 17.3%,
+      0% 0%
+    );
+  }
+}
+.landing-btns {
+  clip-path: polygon(
+    /* Top-left */ 0% 0.5em,
+    0.5em 0,
+    /* top-right */ 100% 0,
+    100% calc(100% - 0.5em),
+    /* bottom-right 1 */ calc(100% - 0.5em) 100%,
+    /* bottom-right 2 */ 0 100%
+  );
+}
+.about-avatar {
+  filter: drop-shadow(0 0 20px hsla(37, 89%, 51%, 0.4));
+  filter: drop-shadow(0 0 10px #f6de04ac);
+}
+
+.shadow-btn {
+  box-shadow: black 0px 6px 0px 0px;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-bottom: 4px solid #fff;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner-d55elj {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* Loading Page */
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #34343433;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #f6dc04;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.loadingtext p {
+  color: white;
+  position: relative;
+}
+
+.loadingtext p::after {
+  position: absolute;
+  animation: b 2s infinite linear;
+  color: white;
+  content: "";
+  left: 105%;
+}
+
+@keyframes b {
+  0% {
+    content: "";
+  }
+
+  10% {
+    content: ".";
+  }
+
+  40% {
+    content: "..";
+  }
+
+  70% {
+    content: "...";
+  }
+
+  100% {
+    content: "";
+  }
+}
+
+/* Loading Page */
