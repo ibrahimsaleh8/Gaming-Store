@@ -11,6 +11,7 @@ import AdminRequire from "./components/Guard/AdminRequire";
 import UserRequire from "./components/Guard/UserRequire";
 import { getWishListAction } from "./store/WishList/Actions/GetWishListAction";
 import AuthFormGuard from "./components/Guard/AuthFormGuard";
+import ShowAllProducts from "./pages/AllProducts/ShowAllProducts";
 
 const WishListPage = lazy(() => import("./pages/WishList/WishListPage"));
 const ContactUsPage = lazy(() => import("./pages/ContactUsPage"));
@@ -19,9 +20,6 @@ const ContactUs = lazy(() => import("./pages/Dashboard/User/ContactUs"));
 const UserOrders = lazy(() => import("./pages/Dashboard/User/UserOrders"));
 const UserOverview = lazy(() => import("./pages/Dashboard/User/UserOverview"));
 
-const ShowAllProducts = lazy(
-  () => import("./pages/AllProducts/ShowAllProducts")
-);
 const LoginPage = lazy(() => import("./pages/Login/LoginPage"));
 const RegisterPage = lazy(() => import("./pages/Register/RegisterPage"));
 const Error404 = lazy(() => import("./pages/Error404"));
@@ -67,14 +65,7 @@ function App() {
       <Routes>
         {/* Pages With NavBar */}
         <Route element={<PagesWithNavbar />}>
-          <Route
-            path="/"
-            element={
-              <Suspense fallback={<LoadingPage />}>
-                <ShowAllProducts />
-              </Suspense>
-            }
-          />
+          <Route path="/" element={<ShowAllProducts />} />
           <Route
             path="about"
             element={
