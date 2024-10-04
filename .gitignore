@@ -1,3 +1,8 @@
+/src/Firebase/
+firebase.json
+firestore.indexes.json
+firestore.rules
+*.firebaserc
 # Logs
 logs
 *.log
@@ -22,7 +27,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-firebase.json
-firestore.indexes.json
-firestore.rules
-src/Firebase
